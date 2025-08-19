@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jawa Perak</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fceabb, #d87bc9);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 0.8s ease-in-out;
+    }
+
+    .navbar img {
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2C3E50;
+      font-weight: bold;
+      font-size: 15px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: #f78da7;
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f78da7;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Login Section */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #f78da7;
+      font-size: 28px;
+    }
+
+    .login-box img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #94cbf5;
+      border-radius: 10px;
+      outline: none;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    .login-box input:focus {
+      border-color: #f78da7;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: #f78da7;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .login-box button:hover {
+      background: #f5597b;
+      transform: scale(1.05);
+    }
+
+    .login-box p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .login-box a {
+      color: #f76a6a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .success-message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+ 
+
+
+
+  
+  <div class="navbar">
+    <img src="assets/logo-white.png" alt="JAWA">
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Login</a>
+    </div>
+    
+  </div>
+
+  
+  <div class="container">
+    
+    <div class="login-box">
+      <img src="assets/bike logo.png" alt=" Jawa Perak">
+      <h2>Welcome Riders</h2>
+
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+
+      <p>Don’t have an account? <a href="sinup.html">Sign up</a></p>
+      <p class="success-message" id="successMsg">✅ Login Successful!</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('successMsg').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
